@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public static class FileLoader {
     public static void calcDataRoot() {
-        DirectoryInfo rootInfo = new DirectoryInfo(Application.dataPath);
+        DirectoryInfo rootInfo = new DirectoryInfo(Application.persistentDataPath);
 
         // Mac compatibility
         if (Application.platform == RuntimePlatform.OSXPlayer)
@@ -71,7 +71,7 @@ public static class FileLoader {
     /// Get the path to the default Undertale assets directory.
     /// </summary>
     public static string DefaultDataPath {
-        get { return Path.Combine(DataRoot, "Default"); }
+        get { return Path.Combine(Application.persistentDataPath, "Mods/" + StaticInits.MODFOLDER); }
     }
 
     /// <summary>
